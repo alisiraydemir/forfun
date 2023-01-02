@@ -1,0 +1,61 @@
+class Calculator:
+    def add(self, *numbers):
+        result = 0
+        for number in numbers:
+            result += number
+        return result
+
+    def sub(self, *numbers):
+        num1 = numbers[0]
+        num2 = 0
+        for number in numbers[1::]:
+            num2 += number
+        return num1 - num2
+
+    def div(self, *numbers):
+        result = numbers[0]
+        for number in range(1, len(numbers)):
+            result /= numbers[number]
+            print(result)
+        return result
+
+    def mult(self, *numbers):
+        result = numbers[0]
+        for number in range(1, len(numbers)):
+            result *= numbers[number]
+            print(result)
+        return result
+
+def main():
+    calculator = Calculator()
+
+    while True:
+        print("Enter the operation you would like to perform (+, -, /, *):")
+        operation = input()
+
+        if operation == '+':
+            print("Enter the numbers you would like to add, separated by spaces:")
+            nums = list(map(int, input().split()))
+            result = calculator.add(*nums)
+            print(f"The result is {result}")
+        elif operation == '-':
+            print("Enter the numbers you would like to subtract, separated by spaces:")
+            nums = list(map(int, input().split()))
+            result = calculator.sub(*nums)
+            print(f"The result is {result}")
+        elif operation == '/':
+            print("Enter the numbers you would like to divide, separated by spaces:")
+            nums = list(map(int, input().split()))
+            result = calculator.div(*nums)
+            print(f"The result is {result}")
+        elif operation == '*':
+            print("Enter the numbers you would like to multiply, separated by spaces:")
+            nums = list(map(int, input().split()))
+            result = calculator.mult(*nums)
+            print(f"The result is {result}")
+        else:
+            print("Invalid operation. Please try again.")
+
+if __name__ == '__main__':
+    main()
+
