@@ -25,7 +25,7 @@ class Calculator:
             result *= numbers[number]
             print(result)
         return result
-
+# 29'uncu satırdan sonraki kod chatgpt'ye yazdırılmıştır.
 def main():
     calculator = Calculator()
 
